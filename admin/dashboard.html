@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Virtual Day Program</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#64748b",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg">
+      <div class="flex items-center justify-center h-16 border-b">
+        <span class="text-2xl font-bold text-primary">VirtualDay Admin</span>
+      </div>
+
+      <nav class="mt-8">
+        <div class="px-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center px-4 py-2 bg-primary text-white rounded-lg"
+          >
+            <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+            Dashboard
+          </a>
+          <a
+            href="users.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="users" class="w-5 h-5 mr-3"></i>
+            Users
+          </a>
+          <a
+            href="programs.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="calendar" class="w-5 h-5 mr-3"></i>
+            Programs
+          </a>
+          <a
+            href="sessions.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="video" class="w-5 h-5 mr-3"></i>
+            Sessions
+          </a>
+          <a
+            href="payments.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="credit-card" class="w-5 h-5 mr-3"></i>
+            Payments
+          </a>
+          <a
+            href="analytics.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="bar-chart-3" class="w-5 h-5 mr-3"></i>
+            Analytics
+          </a>
+          <a
+            href="settings.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="settings" class="w-5 h-5 mr-3"></i>
+            Settings
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64">
+      <!-- Header -->
+      <header class="bg-white shadow-sm border-b">
+        <div class="flex items-center justify-between px-6 py-4">
+          <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+          <div class="flex items-center space-x-4">
+            <button class="p-2 text-gray-400 hover:text-gray-600">
+              <i data-lucide="bell" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center space-x-2">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                alt="Admin"
+                class="w-8 h-8 rounded-full"
+              />
+              <span class="text-sm font-medium">Dr. Jennifer Martinez</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="p-6">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <div class="flex items-center">
+              <div class="p-2 bg-blue-100 rounded-lg">
+                <i data-lucide="users" class="w-6 h-6 text-blue-600"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">
+                  Healthcare Professionals
+                </p>
+                <p class="text-2xl font-semibold text-gray-900">12,847</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <span class="text-green-600 text-sm font-medium">+12.5%</span>
+              <span class="text-gray-600 text-sm"> from last month</span>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <div class="flex items-center">
+              <div class="p-2 bg-green-100 rounded-lg">
+                <i data-lucide="calendar" class="w-6 h-6 text-green-600"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">
+                  Training Programs
+                </p>
+                <p class="text-2xl font-semibold text-gray-900">156</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <span class="text-green-600 text-sm font-medium">+8.2%</span>
+              <span class="text-gray-600 text-sm"> from last month</span>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <div class="flex items-center">
+              <div class="p-2 bg-yellow-100 rounded-lg">
+                <i data-lucide="video" class="w-6 h-6 text-yellow-600"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">
+                  Live Training Sessions
+                </p>
+                <p class="text-2xl font-semibold text-gray-900">67</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <span class="text-red-600 text-sm font-medium">-2.1%</span>
+              <span class="text-gray-600 text-sm"> from last month</span>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <div class="flex items-center">
+              <div class="p-2 bg-purple-100 rounded-lg">
+                <i
+                  data-lucide="dollar-sign"
+                  class="w-6 h-6 text-purple-600"
+                ></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">Monthly Revenue</p>
+                <p class="text-2xl font-semibold text-gray-900">$548,920</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <span class="text-green-600 text-sm font-medium">+15.3%</span>
+              <span class="text-gray-600 text-sm"> from last month</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts and Recent Activity -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <!-- Chart -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <h3 class="text-lg font-semibold mb-4">
+              Healthcare Professional Enrollment
+            </h3>
+            <div
+              class="h-64 flex items-center justify-center bg-gray-50 rounded-lg"
+            >
+              <p class="text-gray-500">Chart visualization would go here</p>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <h3 class="text-lg font-semibold mb-4">Recent Activity</h3>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="flex-1">
+                  <p class="text-sm text-gray-900">
+                    Dr. Amanda Thompson, MD (UCLA Medical Center) completed
+                    Trauma-Informed Care Certification
+                  </p>
+                  <p class="text-xs text-gray-500">8 minutes ago</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <div class="flex-1">
+                  <p class="text-sm text-gray-900">
+                    "Crisis Intervention in Healthcare Settings" live session
+                    started (24 participants)
+                  </p>
+                  <p class="text-xs text-gray-500">25 minutes ago</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                <div class="flex-1">
+                  <p class="text-sm text-gray-900">
+                    Corporate training payment: $2,850.00 (Johns Hopkins
+                    Hospital)
+                  </p>
+                  <p class="text-xs text-gray-500">1 hour ago</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                <div class="flex-1">
+                  <p class="text-sm text-gray-900">
+                    New registration: Maria Gonzalez, LCSW (Houston Methodist
+                    Hospital)
+                  </p>
+                  <p class="text-xs text-gray-500">2 hours ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Programs and Users -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Recent Programs -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-semibold">Recent Programs</h3>
+              <a
+                href="programs.html"
+                class="text-primary hover:underline text-sm"
+                >View all</a
+              >
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center"
+                >
+                  <i data-lucide="brain" class="w-6 h-6 text-blue-600"></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium">
+                    PTSD & Trauma Recovery Certification
+                  </h4>
+                  <p class="text-sm text-gray-500">
+                    127 professionals • $599 (12 CEUs)
+                  </p>
+                </div>
+                <span
+                  class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full"
+                  >Active</span
+                >
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center"
+                >
+                  <i data-lucide="heart" class="w-6 h-6 text-green-600"></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium">
+                    Corporate Mental Health & Wellness
+                  </h4>
+                  <p class="text-sm text-gray-500">
+                    89 HR managers & executives • $449 (8 CEUs)
+                  </p>
+                </div>
+                <span
+                  class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full"
+                  >Active</span
+                >
+              </div>
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center"
+                >
+                  <i
+                    data-lucide="trending-up"
+                    class="w-6 h-6 text-purple-600"
+                  ></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium">Digital Marketing</h4>
+                  <p class="text-sm text-gray-500">30 participants • $149</p>
+                </div>
+                <span
+                  class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full"
+                  >Upcoming</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Users -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-semibold">Recent Users</h3>
+              <a href="users.html" class="text-primary hover:underline text-sm"
+                >View all</a
+              >
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face"
+                  alt="User"
+                  class="w-10 h-10 rounded-full"
+                />
+                <div class="flex-1">
+                  <h4 class="font-medium">Dr. Sarah Johnson, LCSW</h4>
+                  <p class="text-sm text-gray-500">s.johnson@mayoclinic.org</p>
+                </div>
+                <span
+                  class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full"
+                  >Participant</span
+                >
+              </div>
+              <div class="flex items-center space-x-4">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
+                  alt="User"
+                  class="w-10 h-10 rounded-full"
+                />
+                <div class="flex-1">
+                  <h4 class="font-medium">Dr. Michael Davis, PhD</h4>
+                  <p class="text-sm text-gray-500">
+                    m.davis@clevelandclinic.org
+                  </p>
+                </div>
+                <span
+                  class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+                  >Instructor</span
+                >
+              </div>
+              <div class="flex items-center space-x-4">
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face"
+                  alt="User"
+                  class="w-10 h-10 rounded-full"
+                />
+                <div class="flex-1">
+                  <h4 class="font-medium">Emma Wilson, RN, MSN</h4>
+                  <p class="text-sm text-gray-500">e.wilson@johnshopkins.edu</p>
+                </div>
+                <span
+                  class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+                  >Instructor</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

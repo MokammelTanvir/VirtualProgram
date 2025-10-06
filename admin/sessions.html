@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sessions Management - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#64748b",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg">
+      <div class="flex items-center justify-center h-16 border-b">
+        <span class="text-2xl font-bold text-primary">VirtualDay Admin</span>
+      </div>
+
+      <nav class="mt-8">
+        <div class="px-4 space-y-2">
+          <a
+            href="dashboard.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+            Dashboard
+          </a>
+          <a
+            href="users.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="users" class="w-5 h-5 mr-3"></i>
+            Users
+          </a>
+          <a
+            href="programs.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="calendar" class="w-5 h-5 mr-3"></i>
+            Programs
+          </a>
+          <a
+            href="#"
+            class="flex items-center px-4 py-2 bg-primary text-white rounded-lg"
+          >
+            <i data-lucide="video" class="w-5 h-5 mr-3"></i>
+            Sessions
+          </a>
+          <a
+            href="payments.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="credit-card" class="w-5 h-5 mr-3"></i>
+            Payments
+          </a>
+          <a
+            href="analytics.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="bar-chart-3" class="w-5 h-5 mr-3"></i>
+            Analytics
+          </a>
+          <a
+            href="settings.html"
+            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <i data-lucide="settings" class="w-5 h-5 mr-3"></i>
+            Settings
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64">
+      <!-- Header -->
+      <header class="bg-white shadow-sm border-b">
+        <div class="flex items-center justify-between px-6 py-4">
+          <h1 class="text-2xl font-semibold text-gray-900">
+            Sessions Management
+          </h1>
+          <div class="flex items-center space-x-4">
+            <button
+              class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700"
+            >
+              <i data-lucide="plus" class="w-4 h-4 mr-2 inline"></i>
+              Schedule Session
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="p-6">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <div class="flex items-center">
+              <div class="p-2 bg-green-100 rounded-lg">
+                <i data-lucide="video" class="w-6 h-6 text-green-600"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">Live Sessions</p>
+                <p class="text-2xl font-semibold text-gray-900">12</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <div class="flex items-center">
+              <div class="p-2 bg-blue-100 rounded-lg">
+                <i data-lucide="clock" class="w-6 h-6 text-blue-600"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">
+                  Upcoming Sessions
+                </p>
+                <p class="text-2xl font-semibold text-gray-900">47</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <div class="flex items-center">
+              <div class="p-2 bg-purple-100 rounded-lg">
+                <i
+                  data-lucide="check-circle"
+                  class="w-6 h-6 text-purple-600"
+                ></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">Completed</p>
+                <p class="text-2xl font-semibold text-gray-900">284</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-sm border">
+            <div class="flex items-center">
+              <div class="p-2 bg-yellow-100 rounded-lg">
+                <i data-lucide="users" class="w-6 h-6 text-yellow-600"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-sm font-medium text-gray-600">Total Attendees</p>
+                <p class="text-2xl font-semibold text-gray-900">3,294</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Sessions -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border mb-6">
+          <h3 class="text-lg font-semibold mb-4 flex items-center">
+            <div
+              class="w-3 h-3 bg-red-500 rounded-full mr-2 animate-pulse"
+            ></div>
+            Live Sessions (8)
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="border border-red-200 bg-red-50 p-4 rounded-lg">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-medium text-gray-900">
+                  PTSD & Trauma Recovery Certification
+                </h4>
+                <span
+                  class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full flex items-center"
+                >
+                  <div class="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
+                  LIVE
+                </span>
+              </div>
+              <p class="text-sm text-gray-600 mb-2">
+                Instructor: Dr. Jennifer Martinez, MD
+              </p>
+              <p class="text-sm text-gray-600 mb-3">Participants: 24/30</p>
+              <div class="flex items-center space-x-2">
+                <button
+                  class="flex-1 bg-primary text-white px-3 py-2 rounded-md text-sm hover:bg-blue-700"
+                >
+                  <i data-lucide="eye" class="w-4 h-4 mr-1 inline"></i>
+                  Monitor
+                </button>
+                <button
+                  class="px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50"
+                >
+                  <i data-lucide="settings" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="border border-red-200 bg-red-50 p-4 rounded-lg">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-medium text-gray-900">
+                  Crisis Intervention in Healthcare
+                </h4>
+                <span
+                  class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full flex items-center"
+                >
+                  <div class="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
+                  LIVE
+                </span>
+              </div>
+              <p class="text-sm text-gray-600 mb-2">
+                Instructor: Dr. Robert Chen, PhD
+              </p>
+              <p class="text-sm text-gray-600 mb-3">Participants: 42/50</p>
+              <div class="flex items-center space-x-2">
+                <button
+                  class="flex-1 bg-primary text-white px-3 py-2 rounded-md text-sm hover:bg-blue-700"
+                >
+                  <i data-lucide="eye" class="w-4 h-4 mr-1 inline"></i>
+                  Monitor
+                </button>
+                <button
+                  class="px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50"
+                >
+                  <i data-lucide="settings" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="border border-red-200 bg-red-50 p-4 rounded-lg">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-medium text-gray-900">Mindfulness Workshop</h4>
+                <span
+                  class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full flex items-center"
+                >
+                  <div class="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
+                  LIVE
+                </span>
+              </div>
+              <p class="text-sm text-gray-600 mb-2">
+                Instructor: Sarah Johnson
+              </p>
+              <p class="text-sm text-gray-600 mb-3">Participants: 42/50</p>
+              <div class="flex items-center space-x-2">
+                <button
+                  class="flex-1 bg-primary text-white px-3 py-2 rounded-md text-sm hover:bg-blue-700"
+                >
+                  <i data-lucide="eye" class="w-4 h-4 mr-1 inline"></i>
+                  Monitor
+                </button>
+                <button
+                  class="px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50"
+                >
+                  <i data-lucide="settings" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Search Sessions</label
+              >
+              <div class="relative">
+                <input
+                  type="text"
+                  placeholder="Search by program or instructor..."
+                  class="w-full px-4 py-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <i
+                  data-lucide="search"
+                  class="w-4 h-4 text-gray-400 absolute left-3 top-3"
+                ></i>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Status</label
+              >
+              <select
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option>All Statuses</option>
+                <option>Live</option>
+                <option>Upcoming</option>
+                <option>Completed</option>
+                <option>Cancelled</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Date Range</label
+              >
+              <select
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option>All Dates</option>
+                <option>Today</option>
+                <option>This Week</option>
+                <option>This Month</option>
+                <option>Custom Range</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Program</label
+              >
+              <select
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option>All Programs</option>
+                <option>Web Development Bootcamp</option>
+                <option>Digital Marketing</option>
+                <option>Mindfulness Workshop</option>
+                <option>Art Gallery Tour</option>
+              </select>
+            </div>
+            <div class="flex items-end">
+              <button
+                class="w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700"
+              >
+                Apply Filters
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sessions Table -->
+        <div class="bg-white rounded-xl shadow-sm border">
+          <div class="px-6 py-4 border-b">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">All Sessions (343)</h3>
+              <div class="flex items-center space-x-2">
+                <button class="p-2 hover:bg-gray-100 rounded-md">
+                  <i data-lucide="download" class="w-4 h-4"></i>
+                </button>
+                <button class="p-2 hover:bg-gray-100 rounded-md">
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Session
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Program
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Instructor
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Date & Time
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Duration
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Participants
+                  </th>
+                  <th
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <div class="text-sm font-medium text-gray-900">
+                        Session 1: Introduction to React
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        Day 1 of Web Development Bootcamp
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">
+                      Web Development Bootcamp
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                        alt="Instructor"
+                        class="w-8 h-8 rounded-full mr-2"
+                      />
+                      <span class="text-sm text-gray-900">John Smith</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 animate-pulse"
+                    >
+                      Live
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <div>Oct 5, 2025</div>
+                    <div>10:00 AM - 2:00 PM</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    4 hours
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    25/30
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex items-center space-x-2">
+                      <button class="text-primary hover:text-blue-700">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                      </button>
+                      <button class="text-green-400 hover:text-green-600">
+                        <i data-lucide="video" class="w-4 h-4"></i>
+                      </button>
+                      <button class="text-gray-400 hover:text-gray-600">
+                        <i data-lucide="edit" class="w-4 h-4"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <div class="text-sm font-medium text-gray-900">
+                        Morning Meditation
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        Mindfulness & Meditation Workshop
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">
+                      Mindfulness Workshop
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face"
+                        alt="Instructor"
+                        class="w-8 h-8 rounded-full mr-2"
+                      />
+                      <span class="text-sm text-gray-900">Sarah Johnson</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800"
+                    >
+                      Upcoming
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <div>Oct 6, 2025</div>
+                    <div>8:00 AM - 9:00 AM</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    1 hour
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    42/50
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex items-center space-x-2">
+                      <button class="text-primary hover:text-blue-700">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                      </button>
+                      <button class="text-green-400 hover:text-green-600">
+                        <i data-lucide="play" class="w-4 h-4"></i>
+                      </button>
+                      <button class="text-gray-400 hover:text-gray-600">
+                        <i data-lucide="edit" class="w-4 h-4"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <div class="text-sm font-medium text-gray-900">
+                        SEO Fundamentals
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        Digital Marketing Masterclass
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Digital Marketing</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center">
+                      <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+                        alt="Instructor"
+                        class="w-8 h-8 rounded-full mr-2"
+                      />
+                      <span class="text-sm text-gray-900">Mike Davis</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
+                    >
+                      Completed
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <div>Oct 3, 2025</div>
+                    <div>2:00 PM - 5:00 PM</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    3 hours
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    28/30
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex items-center space-x-2">
+                      <button class="text-primary hover:text-blue-700">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                      </button>
+                      <button class="text-purple-400 hover:text-purple-600">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                      </button>
+                      <button class="text-gray-400 hover:text-gray-600">
+                        <i data-lucide="bar-chart" class="w-4 h-4"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination -->
+          <div class="px-6 py-4 border-t">
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-gray-500">
+                Showing 1 to 10 of 343 results
+              </div>
+              <div class="flex items-center space-x-2">
+                <button
+                  class="px-3 py-1 border border-gray-300 text-gray-500 rounded-md hover:bg-gray-50"
+                >
+                  Previous
+                </button>
+                <button class="px-3 py-1 bg-primary text-white rounded-md">
+                  1
+                </button>
+                <button
+                  class="px-3 py-1 border border-gray-300 text-gray-500 rounded-md hover:bg-gray-50"
+                >
+                  2
+                </button>
+                <button
+                  class="px-3 py-1 border border-gray-300 text-gray-500 rounded-md hover:bg-gray-50"
+                >
+                  3
+                </button>
+                <span class="px-3 py-1 text-gray-500">...</span>
+                <button
+                  class="px-3 py-1 border border-gray-300 text-gray-500 rounded-md hover:bg-gray-50"
+                >
+                  35
+                </button>
+                <button
+                  class="px-3 py-1 border border-gray-300 text-gray-500 rounded-md hover:bg-gray-50"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
