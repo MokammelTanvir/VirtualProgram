@@ -2,18 +2,7 @@
 
 ## 📋 Project Overview
 
-**Virtual Day Program Management System** is a comprehensive solution designed for managing virtual e- 1000+ concurrent users support
-
-- Less than 3 seconds page load time
-- 99.9% uptime guarantee
-
-### User Experience
-
-- Intuitive and responsive design
-- Multi-device compatibility
-- Accessibility compliance (WCAG 2.1 AA)
-
-### Securityshops, and educational programs. This system will be built using modern web technologies and will be scalable, secure, and user-friendly.
+**Virtual Day Program Management System** is a comprehensive solution designed for managing virtual workshops, events, and educational programs. This system will be built using modern web technologies and will be scalable, secure, and user-friendly.
 
 ## 🎯 Main Objectives
 
@@ -49,33 +38,33 @@
 - **Cloud**: AWS / Vercel
 - **Database Hosting**: Supabase / AWS RDS
 
-## 📂 তৈরি করা ফাইলগুলো
+## 📂 Created Files
 
 ### 1. **SYSTEM_ARCHITECTURE.md**
 
-- সম্পূর্ণ সিস্টেম আর্কিটেকচার
-- প্রযুক্তিগত স্ট্যক বিস্তারিত
-- নিরাপত্তা এবং পারফরমেন্স বিবেচনা
-- স্কেলেবিলিটি কৌশল
+- Complete system architecture
+- Detailed technology stack
+- Security and performance considerations
+- Scalability strategies
 
 ### 2. **database.sql**
 
-- সম্পূর্ণ PostgreSQL ডেটাবেস স্কিমা
-- ১৫টি প্রধান টেবিল সম্বলিত
-- Relationships এবং foreign keys
-- Indexes এবং performance optimization
-- Sample data এবং initial setup
+- Complete PostgreSQL database schema
+- Contains 15 main tables
+- Relationships and foreign keys
+- Indexes and performance optimization
+- Sample data and initial setup
 
 ### 3. **PROJECT_DEVELOPMENT_GUIDE.md**
 
-- ধাপে ধাপে প্রজেক্ট সেটআপ গাইড
-- ডেভেলপমেন্ট এনভায়রনমেন্ট কনফিগারেশন
-- ব্যাকএন্ড এবং ফ্রন্টএন্ড ইমপ্লিমেন্টেশন
-- টেস্টিং এবং ডিপ্লয়মেন্ট প্রক্রিয়া
+- Step-by-step project setup guide
+- Development environment configuration
+- Backend and frontend implementation
+- Testing and deployment processes
 
 ### 4. **FRONTEND_UI_SPECIFICATIONS.md**
 
-- Dashboard UI ডিজাইন স্পেসিফিকেশন
+- Dashboard UI design specifications
 - Component library structure
 - Responsive design guidelines
 - Accessibility (A11y) requirements
@@ -83,11 +72,11 @@
 
 ### 5. **THESIS_DOCUMENTATION_STRUCTURE.md**
 
-- সম্পূর্ণ থিসিস পেপার স্ট্রাকচার
-- ৬টি চ্যাপ্টারের বিস্তারিত outline
+- Complete thesis paper structure
+- Detailed outline of 6 chapters
 - Research methodology
 - Literature review template
-- Testing এবং evaluation framework
+- Testing and evaluation framework
 
 ## � System Architecture
 
@@ -100,25 +89,25 @@ Frontend (Next.js)     Backend (Node.js)      Database (PostgreSQL)
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
-## 🎨 মূল ফিচারসমূহ
+## 🎨 Core Features
 
 ### 👥 User Management
 
 - Multi-role authentication (Admin, Instructor, Participant)
-- Profile management এবং user permissions
-- Registration এবং invitation system
+- Profile management and user permissions
+- Registration and invitation system
 
 ### 📚 Program Management
 
-- Virtual program creation এবং management
-- Content upload এবং resource sharing
-- Schedule management এবং calendar integration
+- Virtual program creation and management
+- Content upload and resource sharing
+- Schedule management and calendar integration
 
 ### 🎥 Live Session Features
 
 - Video conferencing integration
-- Real-time chat এবং messaging
-- Screen sharing এবং recording capabilities
+- Real-time chat and messaging
+- Screen sharing and recording capabilities
 
 ### 💳 Payment & Billing
 
@@ -175,17 +164,17 @@ Frontend (Next.js)     Backend (Node.js)      Database (PostgreSQL)
 
 ### Performance
 
-- ১০০০+ concurrent users support
-- ৩ সেকেন্ডের কম page load time
-- ৯৯.৯% uptime guarantee
+- 1000+ concurrent users support
+- Less than 3 seconds page load time
+- 99.9% uptime guarantee
 
-### ব্যবহারকারী অভিজ্ঞতা (User Experience)
+### User Experience
 
-- Intuitive এবং responsive design
+- Intuitive and responsive design
 - Multi-device compatibility
 - Accessibility compliance (WCAG 2.1 AA)
 
-### নিরাপত্তা (Security)
+### Security
 
 - End-to-end encryption
 - JWT-based authentication
