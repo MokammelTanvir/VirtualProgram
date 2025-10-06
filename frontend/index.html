@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Day Program - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#64748b",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <h1 class="text-2xl font-bold text-primary">VirtualDay</h1>
+            </div>
+            <div class="hidden md:ml-6 md:flex md:space-x-8">
+              <a
+                href="index.html"
+                class="text-primary border-primary border-b-2 px-1 pt-1 pb-4 text-sm font-medium"
+                >Home</a
+              >
+              <a
+                href="programs.html"
+                class="text-gray-500 hover:text-gray-700 px-1 pt-1 pb-4 text-sm font-medium"
+                >Programs</a
+              >
+              <a
+                href="about.html"
+                class="text-gray-500 hover:text-gray-700 px-1 pt-1 pb-4 text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="contact.html"
+                class="text-gray-500 hover:text-gray-700 px-1 pt-1 pb-4 text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a
+              href="login.html"
+              class="text-gray-700 hover:text-primary text-sm font-medium"
+              >Login</a
+            >
+            <a
+              href="register.html"
+              class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700"
+              >Sign Up</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-blue-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Transform Healthcare Through<br />
+            <span class="text-blue-200">Virtual Day Programs</span>
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+            Empowering healthcare professionals and organizations across America
+            with innovative virtual training, wellness programs, and patient
+            care solutions.
+          </p>
+          <div class="space-x-4">
+            <a
+              href="programs.html"
+              class="bg-white text-primary px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 inline-block"
+            >
+              Explore Programs
+            </a>
+            <a
+              href="register.html"
+              class="border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary inline-block"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Why Choose VirtualDay?
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Experience the future of online learning with our comprehensive
+            virtual program platform
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center p-6 bg-white rounded-xl shadow-sm border">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i data-lucide="video" class="w-8 h-8 text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Live Sessions</h3>
+            <p class="text-gray-600">
+              Interactive live sessions with HD video, screen sharing, and
+              real-time collaboration tools.
+            </p>
+          </div>
+
+          <div class="text-center p-6 bg-white rounded-xl shadow-sm border">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i data-lucide="users" class="w-8 h-8 text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Expert Instructors</h3>
+            <p class="text-gray-600">
+              Learn from industry experts and experienced professionals from
+              around the world.
+            </p>
+          </div>
+
+          <div class="text-center p-6 bg-white rounded-xl shadow-sm border">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i data-lucide="award" class="w-8 h-8 text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Certificates</h3>
+            <p class="text-gray-600">
+              Earn verified certificates upon successful completion of programs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Programs -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Popular Programs
+          </h2>
+          <p class="text-xl text-gray-600">
+            Join thousands of learners in our most popular virtual programs
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Program Card 1 -->
+          <div
+            class="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-blue-500 to-purple-600"
+            ></div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span
+                  class="text-sm font-medium text-primary bg-primary/10 px-2 py-1 rounded"
+                  >Mental Health</span
+                >
+                <span class="text-sm text-gray-500">8 Hours CEU</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">
+                Mental Health First Aid Certification
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Comprehensive virtual training for healthcare professionals to
+                identify, understand, and respond to mental health crises in
+                clinical settings.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-primary">$299</span>
+                <a
+                  href="program-detail.html"
+                  class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Program Card 2 -->
+          <div
+            class="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600"></div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span
+                  class="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded"
+                  >Wellness</span
+                >
+                <span class="text-sm text-gray-500">12 Hours CEU</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">
+                Corporate Wellness Leadership
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Evidence-based virtual program for HR professionals and managers
+                to implement effective workplace wellness initiatives and reduce
+                employee burnout.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-primary">$449</span>
+                <a
+                  href="program-detail.html"
+                  class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Program Card 3 -->
+          <div
+            class="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-purple-500 to-pink-600"
+            ></div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span
+                  class="text-sm font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded"
+                  >Telehealth</span
+                >
+                <span class="text-sm text-gray-500">6 Hours CEU</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">
+                Telehealth Patient Engagement
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Master virtual patient consultation techniques, digital health
+                literacy, and remote monitoring strategies for improved patient
+                outcomes.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-2xl font-bold text-primary">$379</span>
+                <a
+                  href="program-detail.html"
+                  class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                  >View Details</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold text-primary mb-2">5,000+</div>
+            <div class="text-gray-600">Students Enrolled</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-primary mb-2">200+</div>
+            <div class="text-gray-600">Programs Available</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-primary mb-2">50+</div>
+            <div class="text-gray-600">Expert Instructors</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-primary mb-2">95%</div>
+            <div class="text-gray-600">Success Rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">VirtualDay</h3>
+            <p class="text-gray-400">
+              Empowering learners worldwide through innovative virtual education
+              programs.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Programs</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Technology</a></li>
+              <li><a href="#" class="hover:text-white">Business</a></li>
+              <li><a href="#" class="hover:text-white">Design</a></li>
+              <li><a href="#" class="hover:text-white">Marketing</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">About Us</a></li>
+              <li><a href="#" class="hover:text-white">Careers</a></li>
+              <li><a href="#" class="hover:text-white">Contact</a></li>
+              <li><a href="#" class="hover:text-white">Support</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Connect</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Twitter</a></li>
+              <li><a href="#" class="hover:text-white">LinkedIn</a></li>
+              <li><a href="#" class="hover:text-white">Facebook</a></li>
+              <li><a href="#" class="hover:text-white">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 VirtualDay. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

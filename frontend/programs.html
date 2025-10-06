@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programs - Virtual Day Program</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              secondary: "#64748b",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary"
+              >VirtualDay</a
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="text-gray-600 hover:text-primary"
+              >Home</a
+            >
+            <a href="programs.html" class="text-primary font-medium"
+              >Programs</a
+            >
+            <a href="#" class="text-gray-600 hover:text-primary">About</a>
+            <a href="#" class="text-gray-600 hover:text-primary">Contact</a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a href="login.html" class="text-gray-600 hover:text-primary"
+              >Sign In</a
+            >
+            <a
+              href="register.html"
+              class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700"
+              >Get Started</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="bg-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl font-bold text-gray-900 mb-4">
+            Accredited Virtual Training Programs
+          </h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Discover evidence-based virtual training programs for healthcare
+            professionals, corporate wellness teams, and patient care
+            specialists across the United States.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="bg-white p-6 rounded-xl shadow-sm border mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Category</label
+            >
+            <select
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <option>All Categories</option>
+              <option>Mental Health</option>
+              <option>Corporate Wellness</option>
+              <option>Patient Care</option>
+              <option>Telehealth</option>
+              <option>Healthcare Leadership</option>
+              <option>Nursing Education</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Duration</label
+            >
+            <select
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <option>Any Duration</option>
+              <option>1-2 hours</option>
+              <option>Half Day</option>
+              <option>Full Day</option>
+              <option>Multi-day</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Price Range</label
+            >
+            <select
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <option>Any Price</option>
+              <option>Free</option>
+              <option>$1 - $50</option>
+              <option>$51 - $100</option>
+              <option>$100+</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Level</label
+            >
+            <select
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <option>All Levels</option>
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </div>
+          <div class="flex items-end">
+            <button
+              class="w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700"
+            >
+              Filter Programs
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div class="mb-8">
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search programs..."
+            class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+          <div class="absolute left-4 top-3.5">
+            <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Programs Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Program Card 1 -->
+        <div
+          class="bg-white rounded-xl shadow-sm border hover:shadow-md transition-shadow"
+        >
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                >Mental Health</span
+              >
+              <span class="text-green-600 font-semibold">$459</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">
+              PTSD Treatment & Care Certification
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Evidence-based virtual training for healthcare professionals
+              treating PTSD in veterans, first responders, and trauma survivors.
+              Includes CBT and EMDR techniques.
+            </p>
+
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                November 15-16, 2025
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                2 Days, 8 hours/day • 16 CEU Credits
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+                35 healthcare professionals
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="bar-chart" class="w-4 h-4 mr-2"></i>
+                Advanced Level
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                  alt="Instructor"
+                  class="w-8 h-8 rounded-full mr-2"
+                />
+                <span class="text-sm text-gray-600"
+                  >Dr. Michael Rodriguez, PhD</span
+                >
+              </div>
+              <button
+                class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program Card 2 -->
+        <div
+          class="bg-white rounded-xl shadow-sm border hover:shadow-md transition-shadow"
+        >
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium"
+                >Corporate Wellness</span
+              >
+              <span class="text-green-600 font-semibold">$299</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">
+              Workplace Mental Health Champion Training
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Empower HR professionals and managers with evidence-based
+              strategies to support employee mental health, reduce stigma, and
+              create psychologically safe workplaces.
+            </p>
+
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                November 22, 2025
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                Full Day, 8 hours • 8 HRCI Credits
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+                45 HR professionals
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="bar-chart" class="w-4 h-4 mr-2"></i>
+                Intermediate Level
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face"
+                  alt="Instructor"
+                  class="w-8 h-8 rounded-full mr-2"
+                />
+                <span class="text-sm text-gray-600">Dr. Sarah Chen, LCSW</span>
+              </div>
+              <button
+                class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program Card 3 -->
+        <div
+          class="bg-white rounded-xl shadow-sm border hover:shadow-md transition-shadow"
+        >
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
+                >Telehealth</span
+              >
+              <span class="text-green-600 font-semibold">$389</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">
+              Advanced Telehealth Clinical Practice
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Comprehensive training for healthcare providers on virtual patient
+              care, digital health assessments, remote monitoring technologies,
+              and telehealth compliance standards.
+            </p>
+
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                December 3-4, 2025
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                2 Days, 6 hours/day • 12 CME Credits
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+                30 participants
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="bar-chart" class="w-4 h-4 mr-2"></i>
+                Intermediate Level
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+                  alt="Instructor"
+                  class="w-8 h-8 rounded-full mr-2"
+                />
+                <span class="text-sm text-gray-600">Mike Davis</span>
+              </div>
+              <button
+                class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program Card 4 -->
+        <div
+          class="bg-white rounded-xl shadow-sm border hover:shadow-md transition-shadow"
+        >
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium"
+                >Arts & Culture</span
+              >
+              <span class="text-green-600 font-semibold">$45</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">
+              Virtual Art Gallery Tour & Workshop
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Explore world-famous art galleries virtually and create your own
+              masterpiece with guided instruction.
+            </p>
+
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                February 1, 2025
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                1 Day, 3 hours
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+                20 participants
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="bar-chart" class="w-4 h-4 mr-2"></i>
+                All Levels
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+                  alt="Instructor"
+                  class="w-8 h-8 rounded-full mr-2"
+                />
+                <span class="text-sm text-gray-600">Emma Wilson</span>
+              </div>
+              <button
+                class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program Card 5 -->
+        <div
+          class="bg-white rounded-xl shadow-sm border hover:shadow-md transition-shadow"
+        >
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium"
+                >Education</span
+              >
+              <span class="text-green-600 font-semibold">$75</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Science Experiment Lab</h3>
+            <p class="text-gray-600 mb-4">
+              Hands-on virtual science experiments that you can do at home with
+              common materials and guided instruction.
+            </p>
+
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                February 5, 2025
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                1 Day, 4 hours
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+                15 participants
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="bar-chart" class="w-4 h-4 mr-2"></i>
+                Beginner Level
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <img
+                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=32&h=32&fit=crop&crop=face"
+                  alt="Instructor"
+                  class="w-8 h-8 rounded-full mr-2"
+                />
+                <span class="text-sm text-gray-600">Dr. Alex Chen</span>
+              </div>
+              <button
+                class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program Card 6 -->
+        <div
+          class="bg-white rounded-xl shadow-sm border hover:shadow-md transition-shadow"
+        >
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium"
+                >Business</span
+              >
+              <span class="text-green-600 font-semibold">$199</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">
+              Leadership Excellence Program
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Develop essential leadership skills through interactive workshops,
+              case studies, and peer collaboration.
+            </p>
+
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                February 10-12, 2025
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
+                3 Days, 4 hours/day
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+                12 participants
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i data-lucide="bar-chart" class="w-4 h-4 mr-2"></i>
+                Advanced Level
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=32&h=32&fit=crop&crop=face"
+                  alt="Instructor"
+                  class="w-8 h-8 rounded-full mr-2"
+                />
+                <span class="text-sm text-gray-600">Robert Taylor</span>
+              </div>
+              <button
+                class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Load More -->
+      <div class="text-center mt-12">
+        <button
+          class="bg-white text-primary border border-primary px-8 py-3 rounded-md hover:bg-primary hover:text-white transition-colors"
+        >
+          Load More Programs
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">VirtualDay</h3>
+            <p class="text-gray-400">
+              Creating meaningful virtual experiences that connect, educate, and
+              inspire.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Programs</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Technology</a></li>
+              <li><a href="#" class="hover:text-white">Business</a></li>
+              <li>
+                <a href="#" class="hover:text-white">Health & Wellness</a>
+              </li>
+              <li><a href="#" class="hover:text-white">Education</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Support</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Help Center</a></li>
+              <li><a href="#" class="hover:text-white">Contact Us</a></li>
+              <li><a href="#" class="hover:text-white">Community</a></li>
+              <li><a href="#" class="hover:text-white">Resources</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Connect</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Newsletter</a></li>
+              <li><a href="#" class="hover:text-white">Blog</a></li>
+              <li><a href="#" class="hover:text-white">Social Media</a></li>
+              <li><a href="#" class="hover:text-white">Events</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 VirtualDay. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
